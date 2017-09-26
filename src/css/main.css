@@ -1,0 +1,27 @@
+/* style for wp2017 index. */
+body{
+  background-color: black;
+}
+h1{
+  color: white;
+}
+h2{
+  color: white;
+}
+p{
+  color: white;
+}
+.contact{
+  font-size: 20px;
+  text-decoration: none !important;
+}
+.bang{
+  color: gray;
+  font-size: 15px;
+  text-decoration: none !important;
+}
+.bang:hover{
+  color: red;
+  cursor: pointer;
+}
+
