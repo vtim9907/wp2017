@@ -11,6 +11,9 @@ h2{
 p{
   color: white;
 }
+#testc{
+  height: 500px;
+}
 .contact{
   font-size: 20px;
   text-decoration: none !important;
@@ -24,4 +27,8 @@ p{
   color: red;
   cursor: pointer;
 }
-
+.photo {
+	width: 640px;
+	height: 360px;
+	overflow: hidden;
+}
