@@ -1,31 +1,49 @@
 <html>
-  <head>
-    <title>vtim</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="src/css/main.css">
-    <script type="text/javascript" src="src/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="src/js/bang.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="text-center" style="padding-top:30px">
-        <h1>Hello, I'm WeiTing-Xu.</h1><br>
-      </div>
-      <div class="text-center">
-        <h2> NCKU CSIE </h2><br>
-        <h2> Contact me if you like :) </h2>
-        <a class="contact" href="https://www.facebook.com/vtim.tw">Facebook</a><br>
-        <a class="contact" href="https://www.instagram.com/weitingxu332">Instagram</a>
-      </div>
-      <div class="text-center">
-          <h1>Teletubbies say hello ! ! !</h1>
-          <iframe class="photo" src="teletubbies.html" frameborder="0" scrolling="no"></iframe>
-      </div>
-    </div>
-    <div>
-        <p>Do you like the youtuber Saint?</p>
-        <a class="bang" onclick="under13yearold()">* Hell yeah!!</p>
-        <a class="bang" onclick="friend()">* Fuck NO!!</p>
-    </div>
-  </body>
+<head>
+<title>M10709302</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+    $("#btnGetBook").click(function(event) {
+        $.ajax({
+            url: "http://172.104.178.42/api/books/",
+            method: "GET",
+            contentType: "application/x-www-form-urlencoded",
+            data: {
+                bid: $("#bookId").val()
+            },
+            success: function(data) {
+                console.log(data);
+            },
+            error: function(err, status, errorThrown) {
+                console.log("Data: " + err + "\nStatus: " + status + "\nError: " + errorThrown);
+            }
+        });
+        event.preventDefault();
+    });
+    $("#btnGetBooks").click(function(event) {
+        $.ajax({
+            url: "http://172.104.178.42/api/books/",
+            method: "GET",
+            contentType: "application/x-www-form-urlencoded",
+            data: {},
+            success: function(data) {
+                console.log(data);
+            },
+            error: function(err, status, errorThrown) {
+                console.log("Data: " + err + "\nStatus: " + status + "\nError: " + errorThrown);
+            }
+        });
+        event.preventDefault();
+    });
+});
+</script>
+</head>
+<body>
+    <h1>Get book via book ID :</h1>
+    <input type="text" id="bookId"></input>
+    <button type="button" id="btnGetBook">Get book</button></br>
+    <h1>Get all books :</h1>
+    <button type="button" id="btnGetBooks">Get books</button>
+</body>
 </html>
