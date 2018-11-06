@@ -6,7 +6,7 @@
 $(document).ready(function () {
     $("#btnGetBook").click(function(event) {
         $.ajax({
-            url: "http://172.104.178.42/api/books/",
+            url: "https://172.104.178.42/api/books/",
             method: "GET",
             contentType: "application/x-www-form-urlencoded",
             data: {
@@ -23,7 +23,7 @@ $(document).ready(function () {
     });
     $("#btnGetBooks").click(function(event) {
         $.ajax({
-            url: "http://172.104.178.42/api/books/",
+            url: "https://172.104.178.42/api/books/",
             method: "GET",
             contentType: "application/x-www-form-urlencoded",
             data: {},
